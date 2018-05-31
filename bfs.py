@@ -12,6 +12,9 @@ class Vertex:
 
         self.neighbours = neighbours
 
+    def __repr__(self):
+        return f"Vertex({self.id})"
+
 
 def breadth_first_search(start: Vertex):
     queue = Queue()
