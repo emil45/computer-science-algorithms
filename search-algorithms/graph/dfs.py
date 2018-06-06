@@ -1,37 +1,21 @@
-from utils.models import Vertex
+from networkx import Graph
+
+from utils.models import initialize_graph
 
 
-def initialize_graph():
-    return [
-        Vertex(1, neighbours=[
-            Vertex(2, neighbours=[
-                Vertex(4, neighbours=[
-                    Vertex(5, neighbours=[
-                        Vertex(11),
-                        Vertex(12)])
-                ]),
-                Vertex(6)]),
-            Vertex(3, neighbours=[
-                Vertex(7, neighbours=[
-                    Vertex(9),
-                    Vertex(10)]),
-                Vertex(8)])
-        ])
-    ]
-
-
-def depth_first_search(start: Vertex, goal: int):
-    stack = [start]
+def depth_first_search(graph: Graph, root: int, target: int):
+    stack = [root]
+    visited = set()
 
     while stack:
         vertex = stack.pop()
-        print(f"Now handling: {vertex}")
-        vertex.visited = True
+        print(f"Now handling vertex number: {vertex}")
+        visited.add(vertex)
 
-        if vertex.id == goal:
+        if vertex == target:
             return vertex
-        for neighbour in vertex.neighbours:
-            if not neighbour.visited:
+        for neighbour in graph.adj[vertex]:
+            if neighbour not in visited:
                 stack.append(neighbour)
 
     return None
@@ -39,8 +23,8 @@ def depth_first_search(start: Vertex, goal: int):
 
 if __name__ == "__main__":
     graph = initialize_graph()
-    goal_vertex = depth_first_search(start=graph[0], goal=10)
-    if goal_vertex:
-        print(f"Found goal vertex: {goal_vertex}")
+    target_vertex = depth_first_search(graph, root=1, target=12)
+    if target_vertex:
+        print(f"Found target vertex: {target_vertex}")
     else:
-        print("Not found goal vertex")
+        print("Not found target vertex")
