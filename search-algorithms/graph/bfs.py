@@ -7,18 +7,17 @@ from utils.models import initialize_graph
 
 def breadth_first_search(graph: Graph, root: int, target: int):
     queue = Queue()
-    visited = set()
     queue.put(root)
 
     while not queue.empty():
         vertex = queue.get()
-        visited.add(vertex)
         print(f"Now handling vertex number: {vertex}")
+        graph.nodes[vertex]["visited"] = True
 
         if vertex == target:
             return vertex
-        for neighbour in graph.adj[vertex]:
-            if neighbour not in visited:
+        for neighbour in graph.neighbors(vertex):
+            if not graph.nodes[neighbour]["visited"]:
                 queue.put(neighbour)
 
     return None
