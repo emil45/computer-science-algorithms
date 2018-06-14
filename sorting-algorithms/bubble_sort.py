@@ -2,14 +2,14 @@ from typing import List
 
 
 def bubble_sort(array: List[int]):
-    sorted = False
+    swapped = True  # Most to initialize to `True` for the while loop to success for the first time
 
-    while not sorted:
-        sorted = True
-        for index in range(len(array)-1):
+    while swapped:
+        swapped = False
+        for index in range(len(array) - 1):
             if array[index] > array[index + 1]:
                 array[index], array[index + 1] = array[index + 1], array[index]
-                sorted = False
+                swapped = True
 
     return array
 

@@ -1,4 +1,9 @@
+from collections import namedtuple
+
 import networkx
+
+
+Job = namedtuple("Job", ["start_time", "finish_time"])
 
 
 def initialize_graph():
@@ -11,3 +16,8 @@ def initialize_graph():
                           (7, 9), (7, 10)])
     networkx.set_node_attributes(graph, False, "visited")
     return graph
+
+
+def initialize_jobs():
+    return [Job(1, 5), Job(5, 9), Job(10, 11), Job(2, 6), Job(2, 7),
+            Job(1, 2), Job(3, 4), Job(2, 3), Job(4, 6), Job(6, 10)]
