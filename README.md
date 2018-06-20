@@ -7,30 +7,31 @@ Algorithms in computer science written in python.
 Here are the list of the implemented algorithms in this project,
 *You are more then welcome to add new algorithms.*
 
+
+Divide and Conquer Algorithms
+-
+
+- find minimum number of coins to fill value
+
+Greedy Algorithms
+-
+
+- interval scheduling
+
+Numerical Algorithms
+-
+
+- fibonacci
+
 Search Algorithms
 -
 
 - Graph/Tree
     - breadth-first search
     - depth-first search
-- Array/List
-    - linear search
-    - binary search
+    - dijkstra
 
 Sorting Algorithms
 -
 
-- selection sort
 - bubble sort
-- insertion sort
-- merge sort
-- quick sort
-
-Merge Algorithms
--
-
-String Algorithms
--
-
-Numerical Algorithms
--
