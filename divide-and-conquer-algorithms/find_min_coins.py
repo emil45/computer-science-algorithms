@@ -21,5 +21,6 @@ def find_min_coins_recursive(coins: List[int], index: int, value: int):
                    1 + find_min_coins_recursive(coins, index, value - coins[index]))
 
 
-test_coins = [1, 4, 5, 10, 6, 8, 2, 12, 5]
-print(find_min_coins_recursive(test_coins, len(test_coins) - 1, 48))
+if __name__ == "__main__":
+    test_coins = [1, 4, 5, 10, 6, 8, 2, 12, 5]
+    print(find_min_coins_recursive(test_coins, len(test_coins) - 1, 48))
