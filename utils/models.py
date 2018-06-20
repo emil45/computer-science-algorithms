@@ -1,9 +1,14 @@
+import math
 from collections import namedtuple
 
 import networkx
 
-
 Job = namedtuple("Job", ["start_time", "finish_time"])
+
+
+def get_node_with_minimal_distance(graph: networkx.Graph):
+    nodes = networkx.get_node_attributes(graph, "distance")
+    return min(nodes, key=nodes.get)
 
 
 def initialize_graph():
@@ -15,6 +20,20 @@ def initialize_graph():
                           (3, 7), (3, 8),
                           (7, 9), (7, 10)])
     networkx.set_node_attributes(graph, False, "visited")
+    return graph
+
+
+def initialize_weighted_graph():
+    graph = networkx.Graph()
+    graph.add_edge(1, 2, weight=6)
+    graph.add_edge(1, 3, weight=4)
+    graph.add_edge(3, 4, weight=1)
+    graph.add_edge(3, 5, weight=7)
+    graph.add_edge(3, 6, weight=9)
+    graph.add_edge(4, 5, weight=2)
+    graph.add_edge(5, 6, weight=2)
+    graph.add_edge(1, 4, weight=3)
+    networkx.set_node_attributes(graph, math.inf, "distance")
     return graph
 
 
