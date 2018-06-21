@@ -13,12 +13,17 @@ def get_node_with_minimal_distance(graph: networkx.Graph):
 
 def initialize_graph():
     graph = networkx.Graph()
-    graph.add_edges_from([(1, 2), (1, 3),
-                          (2, 4), (2, 6),
-                          (4, 5),
-                          (5, 11), (5, 12),
-                          (3, 7), (3, 8),
-                          (7, 9), (7, 10)])
+    graph.add_edge(1, 2)
+    graph.add_edge(1, 3)
+    graph.add_edge(2, 4)
+    graph.add_edge(2, 6)
+    graph.add_edge(3, 7)
+    graph.add_edge(3, 8)
+    graph.add_edge(4, 5)
+    graph.add_edge(5, 11)
+    graph.add_edge(5, 12)
+    graph.add_edge(7, 9)
+    graph.add_edge(7, 10)
     networkx.set_node_attributes(graph, False, "visited")
     return graph
 
@@ -27,12 +32,12 @@ def initialize_weighted_graph():
     graph = networkx.Graph()
     graph.add_edge(1, 2, weight=6)
     graph.add_edge(1, 3, weight=4)
+    graph.add_edge(1, 4, weight=3)
     graph.add_edge(3, 4, weight=1)
     graph.add_edge(3, 5, weight=7)
     graph.add_edge(3, 6, weight=9)
     graph.add_edge(4, 5, weight=2)
     graph.add_edge(5, 6, weight=2)
-    graph.add_edge(1, 4, weight=3)
     networkx.set_node_attributes(graph, math.inf, "distance")
     return graph
 

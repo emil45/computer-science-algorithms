@@ -30,7 +30,7 @@ Search Algorithms
     - breadth-first search
     - depth-first search
     - dijkstra
-    - TODO: dijkstra with priority queue 
+    - kruskal 
 
 Sorting Algorithms
 -
