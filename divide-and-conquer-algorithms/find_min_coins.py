@@ -1,7 +1,7 @@
 from typing import List
 
 
-def find_min_coins_recursive(coins: List[int], index: int, value: int):
+def find_min_coins(coins: List[int], index: int, value: int):
     """
     Find minimum number of coins that make a given value
 
@@ -15,12 +15,11 @@ def find_min_coins_recursive(coins: List[int], index: int, value: int):
     elif index == 0:
         return value
     elif coins[index] > value:
-        return find_min_coins_recursive(coins, index - 1, value)
+        return find_min_coins(coins, index - 1, value)
     else:
-        return min(find_min_coins_recursive(coins, index - 1, value),
-                   1 + find_min_coins_recursive(coins, index, value - coins[index]))
+        return min(find_min_coins(coins, index - 1, value), 1 + find_min_coins(coins, index, value - coins[index]))
 
 
 if __name__ == "__main__":
     test_coins = [1, 4, 5, 10, 6, 8, 2, 12, 5]
-    print(find_min_coins_recursive(test_coins, len(test_coins) - 1, 48))
+    print(find_min_coins(test_coins, len(test_coins) - 1, 48))

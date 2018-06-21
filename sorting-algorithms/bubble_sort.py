@@ -14,4 +14,5 @@ def bubble_sort(array: List[int]):
     return array
 
 
-print(bubble_sort([5, 2, 9, 6, 7, 1, 10, 3, 7]))
+if __name__ == "__main__":
+    print(bubble_sort([5, 2, 9, 6, 7, 1, 10, 3, 7]))
