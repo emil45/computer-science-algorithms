@@ -1,4 +1,4 @@
-# python-computer-science
+# Computer Science Algorithms
 
 Algorithms in computer science written in python.
 
