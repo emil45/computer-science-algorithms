@@ -39,3 +39,4 @@ Sorting Algorithms
 -
 
 - bubble sort
+- selection sort
