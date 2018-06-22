@@ -26,6 +26,9 @@ Numerical Algorithms
 Search Algorithms
 -
 
+- Array
+    - binary search
+
 - Graph/Tree
     - breadth-first search
     - depth-first search
