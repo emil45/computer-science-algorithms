@@ -40,3 +40,6 @@ Sorting Algorithms
 
 - bubble sort
 - selection sort
+- quick sort
+- insertion sort
+
