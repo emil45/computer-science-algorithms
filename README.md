@@ -8,10 +8,13 @@ Here are the list of the implemented algorithms in this project,
 *You are more then welcome to add new algorithms.*
 
 
-Divide and Conquer Algorithms
+Algorithmic Questions
 -
 
 - find minimum number of coins to fill value
+- get tree height
+- merge two sorted linked lists
+- permutations
 
 Greedy Algorithms
 -

@@ -6,6 +6,69 @@ import networkx
 Job = namedtuple("Job", ["start_time", "finish_time"])
 
 
+class LinkedListNode:
+    def __init__(self, data, next=None):
+        self.data = data
+        self.next = next
+
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def append(self, value):
+        if self.tail:
+            self.tail.next = LinkedListNode(data=value)
+            self.tail = self.tail.next
+        else:
+            self.head = LinkedListNode(data=value)
+            self.tail = self.head
+
+    def search(self, value):
+        temp = self.head
+        while temp and temp.data != value:
+            temp = temp.next
+        return temp
+
+    @staticmethod
+    def insert_after(node: LinkedListNode, new_node: LinkedListNode):
+        new_node.next = node.next
+        node.next = node
+
+    @staticmethod
+    def delete_after(node: LinkedListNode):
+        node.next = node.next.next
+
+    def print_list(self):
+        temp = self.head
+        while temp:
+            print(temp.data)
+            temp = temp.next
+
+    def __iter__(self):
+        temp = self.head
+        while temp:
+            yield temp.data
+            temp = temp.next
+
+    def reverse(self):
+        current = self.head
+        previous = None
+
+        while current:
+            next = current.next
+            current.next = previous
+            previous = current
+            current = next
+
+        self.head = previous
+        self.tail = self.head
+
+    def __repr__(self):
+        return str(f'<LinkedList {list(self)}>')
+
+
 def get_node_with_minimal_distance(graph: networkx.Graph):
     nodes = networkx.get_node_attributes(graph, "distance")
     return min(nodes, key=nodes.get)
