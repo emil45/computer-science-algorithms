@@ -11,10 +11,13 @@ Here are the list of the implemented algorithms in this project,
 Algorithmic Questions
 -
 
+- concentric_rectangular
+- cons_problem
 - find minimum number of coins to fill value
 - get tree height
 - merge two sorted linked lists
 - permutations
+- subsets
 
 Greedy Algorithms
 -

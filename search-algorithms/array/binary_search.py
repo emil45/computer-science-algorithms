@@ -1,4 +1,18 @@
-import math
+from typing import List
+
+
+def binary_search_recursive(array: List[int], num: int):
+    def binary_search_recursive_helper(array: List[int], left: int, right: int, num: int):
+        if right < left:
+            return None
+        mid = (left + right) // 2
+        if array[mid] == num:
+            return num
+        elif array[mid] > num:
+            return binary_search_recursive_helper(array, left, mid - 1, num)
+        else:
+            return binary_search_recursive_helper(array, mid + 1, right, num)
+    return binary_search_recursive_helper(array, 0, len(array) - 1, num)
 
 
 def binary_search(array: list, num: int):
@@ -7,7 +21,7 @@ def binary_search(array: list, num: int):
 
     while left <= right:
 
-        middle_index: int = math.floor((left + right) / 2)
+        middle_index = (left + right) / 2
         middle_number = array[middle_index]
 
         if middle_number == num:
@@ -21,4 +35,4 @@ def binary_search(array: list, num: int):
 
 
 if __name__ == "__main__":
-    print(binary_search([1, 2, 3, 5, 8, 13, 21], 1))
+    print(binary_search_recursive([1, 2, 3, 5, 8, 13, 21], 21))

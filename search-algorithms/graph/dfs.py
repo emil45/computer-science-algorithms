@@ -12,7 +12,9 @@ def depth_first_search_recursive(graph: Graph, root: int, target: int):
 
     for neighbour in graph.neighbors(root):
         if not graph.nodes[neighbour]["visited"]:
-            depth_first_search_recursive(graph, neighbour, target)
+            vertex = depth_first_search_recursive(graph, neighbour, target)
+            if vertex:
+                return vertex
 
 
 def depth_first_search(graph: Graph, root: int, target: int):
@@ -35,7 +37,7 @@ def depth_first_search(graph: Graph, root: int, target: int):
 
 if __name__ == "__main__":
     graph = initialize_graph()
-    target_vertex = depth_first_search_recursive(graph, root=1, target=8)
+    target_vertex = depth_first_search_recursive(graph, root=1, target=9)
     if target_vertex:
         print(f"Found target vertex: {target_vertex}")
     else:
