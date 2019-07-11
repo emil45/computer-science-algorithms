@@ -14,7 +14,12 @@ Algorithmic Questions
 - concentric_rectangular
 - cons_problem
 - find minimum number of coins to fill value
+- gas stations
 - get tree height
+- is symmetric
+- largest number
+- majority element
+- maximum gap
 - merge two sorted linked lists
 - permutations
 - subsets
